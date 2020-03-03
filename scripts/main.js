@@ -1,2 +1,3 @@
-//  const mySong = document.querySelector('h1');
-//  mySong.textContent = 'Hello World!';
+  const mySong = document.querySelector('h1');
+  alert("hello world");
+  //mySong.textContent = 'Hello World!';
