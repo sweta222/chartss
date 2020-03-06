@@ -1,0 +1,18 @@
+[
+    {
+        "name": "compost",
+        "tons": 200
+    },
+    {
+        "name": "paper and card",
+        "tons": 600
+    },
+    {
+        "name": "glass",
+        "tons": 300
+    },
+    {
+        "name": "co-mingled material",
+        "tons": 900
+    }
+  ]
