@@ -1,4 +1,4 @@
-const marginx = { top: 40, right: 40, bottom: 60, left: 120 };
+/*const marginx = { top: 40, right: 40, bottom: 60, left: 120 };
 const graphWidthx = 800 - marginx.left - marginx.right;
 const graphHeightx = 500 - marginx.top - marginx.bottom;
 
@@ -65,4 +65,35 @@ d3.json('linechartdata.json').then(data => {
   yAxisGroupLine.selectAll('text')
     .attr('font-size', '20px');
 
-  })
+  })*/
+createBasic("m");
+d3.json('linechartdata.json').then(data => {
+   //import graphHeight from './share.js';
+   //import graphWidth from './share.js';
+   //import function createBasic() {graphHeight, graphWidth};
+  const y = d3.scaleLinear()
+   .domain([0,d3.max(data, d => d.distance)])
+   .range([graphHeight,0]);//for inverting the x-axis from top post to bottom
+
+  const x = d3.scaleBand()
+   .domain(data.map(d => d.year))
+   .range([0,graphWidth]);
+
+ //d3 line path generator
+ const line = d3.line()
+   .x(function(d) { return x(d.year);})
+   .y(function(d){ return y(d.distance);});
+
+ //path element
+ const path = graph.append('path');
+
+ path.data([data])
+   .attr('fill', 'none')
+   .attr('stroke', 'blue')
+   .attr('stroke-width', 2)
+   .attr('class', 'line')
+   .attr('d', line);
+
+//drawAxes("z");
+//import {drawAxes} from './share.js';
+});

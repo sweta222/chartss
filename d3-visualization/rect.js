@@ -1,4 +1,4 @@
-const margin = { top: 20, right: 20, bottom: 60, left: 120 };
+/*const margin = { top: 20, right: 20, bottom: 60, left: 120 };
 const graphWidth = 860 - margin.left - margin.right;
 const graphHeight = 560 - margin.top - margin.bottom;
 
@@ -63,4 +63,7 @@ d3.json('recyclingdata.json').then(data => {
 
     yAxisGroup.selectAll('text')
      .style('font-size', '20px');
-})
+})*/
+
+createBasic("n");
+//drawAxes("h");
