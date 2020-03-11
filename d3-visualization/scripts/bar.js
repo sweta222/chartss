@@ -13,7 +13,7 @@ const drawBar = (
   rects
     .enter()
     .append('rect')
-    .attr('width', xScale.bandwidth)
+    .attr('width', barWidth)
     .attr('height', d => barMaxHeight - yScale(d[yScaleAttrName]))
     .attr('fill', 'orange')
     .attr('x', d => xScale(d[xScaleAttrName]))
