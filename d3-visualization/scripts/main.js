@@ -30,7 +30,16 @@ d3.json('data/barchartdata.json').then(data => {
     graphHeight
   );
 
-  drawBar(xScale, yScale, graph, data, 'name', 'tons', graphHeight, 50);
+  drawBar(
+    xScale,
+    yScale,
+    graph,
+    data,
+    'name',
+    'tons',
+    graphHeight,
+    xScale.bandwidth
+  );
 });
 
 d3.json('data/linechartdata.json').then(data => {
