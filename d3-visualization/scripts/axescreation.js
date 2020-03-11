@@ -8,7 +8,7 @@ const drawLinearAxis = (
   const scale = d3
     .scaleLinear()
     .domain([domainMin, domainMax])
-    .range([rangeMin, rangeMax]); //for inverting the x-axis from top post to bottom
+    .range([rangeMin, rangeMax]);
 
   const group = parentGroup.append('g');
 
