@@ -1,4 +1,6 @@
-[
+{"type": "bar",
+
+  "value":[
   {
     "name": "compost",
     "tons": 200
@@ -15,4 +17,5 @@
     "name": "co-mingled material",
     "tons": 900
   }
-]
+  ]
+}
