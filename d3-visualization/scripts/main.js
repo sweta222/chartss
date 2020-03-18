@@ -30,7 +30,9 @@ const draw = (selectorName, data) => {
     graphWidth,
     graph,
     graphHeight,
-    data.xTextsize
+    data.xTextsize,
+    data.xTransform,
+    data.xTextAnchor
   );
   switch (data.type) {
     case 'bar':
