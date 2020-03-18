@@ -11,6 +11,8 @@ yTextsize: '20px',
 xTextsize: '20px',
 xTransform: 'rotate(-7)',
 xTextAnchor: 'middle',
+innerPadding: 0.5,
+outerPadding: 0.5,
 
 "datasets":[
     {
