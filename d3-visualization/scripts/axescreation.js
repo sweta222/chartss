@@ -3,7 +3,7 @@ const drawLinearAxis = (
   domainMax,
   rangeMin,
   rangeMax,
-  parentGroup
+  parentGroup,
 ) => {
   const scale = d3
     .scaleLinear()
@@ -27,8 +27,8 @@ const drawBandAxis = (domainArr, rangeMin, rangeMax, parentGroup, height) => {
     .scaleBand()
     .domain(domainArr)
     .range([rangeMin, rangeMax])
-    .paddingInner(0.7)
-    .paddingOuter(0.7);
+    .paddingInner(0.6)
+    .paddingOuter(0.6);
 
   const group = parentGroup
     .append('g')
