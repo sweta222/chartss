@@ -23,13 +23,13 @@ const drawLinearAxis = (
   return scale;
 };
 
-const drawBandAxis = (domainArr, rangeMin, rangeMax, parentGroup, height, xaxisTextsize, transRotation, textAnchorpost) => {
+const drawBandAxis = (domainArr, rangeMin, rangeMax, parentGroup, height, xaxisTextsize, transRotation, textAnchorpost, paddingI, paddingO) => {
   const scale = d3
     .scaleBand()
     .domain(domainArr)
     .range([rangeMin, rangeMax])
-    .paddingInner(0.6)
-    .paddingOuter(0.6);
+    .paddingInner(paddingI)
+    .paddingOuter(paddingO);
 
   const group = parentGroup
     .append('g')
