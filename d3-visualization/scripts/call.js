@@ -6,7 +6,7 @@ height:500,
 linestrokecolor: 'teal',
 lineArea: 'yellow',
 strokeWidth: 2,
-barColor: 'green',
+barColor: 'grey',
 yTextsize: '20px',
 xTextsize: '20px',
 
