@@ -4,7 +4,10 @@ const drawLine = (
   data,
   xScaleAttrName,
   yScaleAttrName,
-  parentGroup
+  parentGroup,
+  strokeColor,
+  fillBeneathline,
+  fillStrokeWidth,
 ) => {
   const line = d3
     .line()
@@ -20,9 +23,9 @@ const drawLine = (
 
   path
     .data([data])
-    .attr('fill', 'none')
-    .attr('stroke', 'blue')
-    .attr('stroke-width', 2)
+    .attr('fill', fillBeneathline)
+    .attr('stroke', strokeColor)
+    .attr('stroke-width', fillStrokeWidth)
     .attr('class', 'line')
     .attr('d', line);
 };
