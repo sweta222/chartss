@@ -21,14 +21,16 @@ const draw = (selectorName, data) => {
     d3.max(data.datasets, d => d.labely),
     graphHeight,
     0,
-    graph
+    graph,
+    data.yTextsize
   );
   const xScale = drawBandAxis(
     data.datasets.map(d => d.labelx),
     0,
     graphWidth,
     graph,
-    graphHeight
+    graphHeight,
+    data.xTextsize
   );
   switch (data.type) {
     case 'bar':
@@ -40,11 +42,12 @@ const draw = (selectorName, data) => {
         'labelx',
         'labely',
         graphHeight,
-        xScale.bandwidth
+        xScale.bandwidth,
+        data.barColor,
       );
     break;
     case 'line':
-      drawLine(xScale, yScale, data.datasets, 'labelx', 'labely', graph);
+      drawLine(xScale, yScale, data.datasets, 'labelx', 'labely', graph, data.linestrokecolor, data.lineArea, data.strokeWidth);
     default:
     break;
   }
