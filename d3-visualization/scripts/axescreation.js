@@ -4,6 +4,7 @@ const drawLinearAxis = (
   rangeMin,
   rangeMax,
   parentGroup,
+  yaxisTextsize,
 ) => {
   const scale = d3
     .scaleLinear()
@@ -17,12 +18,12 @@ const drawLinearAxis = (
   group
     .call(axis)
     .selectAll('text')
-    .style('font-size', '20px');
+    .style('font-size', yaxisTextsize);
 
   return scale;
 };
 
-const drawBandAxis = (domainArr, rangeMin, rangeMax, parentGroup, height) => {
+const drawBandAxis = (domainArr, rangeMin, rangeMax, parentGroup, height, xaxisTextsize) => {
   const scale = d3
     .scaleBand()
     .domain(domainArr)
@@ -40,7 +41,7 @@ const drawBandAxis = (domainArr, rangeMin, rangeMax, parentGroup, height) => {
     .selectAll('text')
     .attr('transform', 'rotate(-7)')
     .attr('text-anchor', 'middle')
-    .style('font-size', '20px');
+    .style('font-size', xaxisTextsize);
 
   return scale;
 };
