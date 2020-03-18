@@ -32,7 +32,9 @@ const draw = (selectorName, data) => {
     graphHeight,
     data.xTextsize,
     data.xTransform,
-    data.xTextAnchor
+    data.xTextAnchor,
+    data.innerPadding,
+    data.outerPadding
   );
   switch (data.type) {
     case 'bar':
@@ -45,7 +47,7 @@ const draw = (selectorName, data) => {
         'labely',
         graphHeight,
         xScale.bandwidth,
-        data.barColor,
+        data.barColor
       );
     break;
     case 'line':
