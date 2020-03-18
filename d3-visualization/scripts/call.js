@@ -9,6 +9,8 @@ strokeWidth: 2,
 barColor: 'grey',
 yTextsize: '20px',
 xTextsize: '20px',
+xTransform: 'rotate(-7)',
+xTextAnchor: 'middle',
 
 "datasets":[
     {
