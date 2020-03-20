@@ -4,7 +4,7 @@ const drawLinearAxis = (
   rangeMin,
   rangeMax,
   parentGroup,
-  yaxisTextsize,
+  yaxisTextsize
 ) => {
   const scale = d3
     .scaleLinear()
@@ -23,7 +23,18 @@ const drawLinearAxis = (
   return scale;
 };
 
-const drawBandAxis = (domainArr, rangeMin, rangeMax, parentGroup, height, xaxisTextsize, transRotation, textAnchorpost, paddingI, paddingO) => {
+const drawBandAxis = (
+  domainArr,
+  rangeMin,
+  rangeMax,
+  parentGroup,
+  height,
+  xaxisTextsize,
+  transRotation,
+  textAnchorpost,
+  paddingI,
+  paddingO
+) => {
   const scale = d3
     .scaleBand()
     .domain(domainArr)
@@ -33,7 +44,7 @@ const drawBandAxis = (domainArr, rangeMin, rangeMax, parentGroup, height, xaxisT
 
   const group = parentGroup
     .append('g')
-    .attr('transform', `translate(0, ${height})`);
+    .attr('transform', `translate(0, ${height})`); //for inverting x-axis
 
   const axis = d3.axisBottom(scale);
   group
