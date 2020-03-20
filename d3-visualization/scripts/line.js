@@ -7,7 +7,7 @@ const drawLine = (
   parentGroup,
   strokeColor,
   fillBeneathline,
-  fillStrokeWidth,
+  fillStrokeWidth
 ) => {
   const line = d3
     .line()
