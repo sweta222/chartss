@@ -31,26 +31,28 @@ Chart.defaults.global.defaultFontSize = 27;
 Chart.defaults.global.defaultFontColor = '#777';
 
 let data = {
-  "Mercury": 5427,
-  "Venus": 5243,
-  "Earth": 5514,
-  "Mars": 3933,
-  "Jupiter": 1326,
-  "Saturn": 687,
-  "Uranus": 1271,
-  "Neptune": 1638
-}
+  Mercury: 5427,
+  Venus: 5243,
+  Earth: 5514,
+  Mars: 3933,
+  Jupiter: 1326,
+  Saturn: 687,
+  Uranus: 1271,
+  Neptune: 1638
+};
 
 const drawBar = document.getElementById('barchart');
 
 let barChart = new Chart(drawBar, {
   type: 'bar',
   data: {
-     labels: Object.keys(data),
-     datasets: [{
+    labels: Object.keys(data),
+    datasets: [
+      {
         label: 'density of planets (kg/m3)',
         backgroundColor: 'orange',
         data: Object.values(data)
-     }]
+      }
+    ]
   }
-})
+});
