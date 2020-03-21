@@ -21,8 +21,8 @@ const drawPie = (
   pieLegWidth,
   pieLegHeight,
   legendTextsize,
-  legYpost,
-  legXpost
+  legTextYpost,
+  legTextXpost
 ) => {
   const g = parentGroup
     .selectAll('arc')
@@ -73,6 +73,6 @@ const drawPie = (
     .append('text')
     .text(legendText)
     .style('font-size', legendTextsize)
-    .attr('y', legYpost)
-    .attr('x', legXpost);
+    .attr('y', legTextYpost)
+    .attr('x', legTextXpost);
 };
