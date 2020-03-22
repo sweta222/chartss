@@ -7,11 +7,6 @@ const draw = (selectorName, data) => {
   };
   const graphWidth = data.width - margin.left - margin.right;
   const graphHeight = data.height - margin.top - margin.bottom;
-  const radius =
-    Math.min(
-      graphWidth + margin.left + margin.right,
-      graphHeight + margin.top + margin.bottom
-    ) / 2;
 
   const svg = d3
     .select(selectorName)
@@ -26,24 +21,10 @@ const draw = (selectorName, data) => {
     .attr('height', graphHeight)
     .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-  const colors = d3.scaleOrdinal().range(data.barColor);
-
-  const color = d3.scaleOrdinal().range(data.piecolors);
-
-  const pie = d3.pie()(data.datasets.map(d => d.labely));
-
-  const arc = d3
-    .arc()
-    .outerRadius(radius - 10)
-    .innerRadius(data.innerRadius);
-
-  const labelArc = d3
-    .arc()
-    .outerRadius(radius - 40)
-    .innerRadius(radius - 40);
-
   switch (data.type) {
     case 'bar':
+      const colors = d3.scaleOrdinal().range(data.barColor);
+
       const yScale = drawLinearAxis(
         0,
         d3.max(data.datasets, d => d.labely),
@@ -77,8 +58,9 @@ const draw = (selectorName, data) => {
         svg,
         data.Heading,
         data.HeadingSize,
-        data.LegXpost,
-        data.LegYpost
+        data.HeadingStyleXval,
+        data.HeadingStyleYval,
+        data.HeadingColor
       );
       break;
     case 'line':
@@ -115,6 +97,23 @@ const draw = (selectorName, data) => {
       );
       break;
     case 'pie':
+      const radius =
+        Math.min(
+          graphWidth + margin.left + margin.right,
+          graphHeight + margin.top + margin.bottom
+        ) / 2;
+      const color = d3.scaleOrdinal().range(data.piecolors);
+      const pie = d3.pie()(data.datasets.map(d => d.labely));
+      const arc = d3
+        .arc()
+        .outerRadius(radius - 10)
+        .innerRadius(data.innerRadius);
+
+      const labelArc = d3
+        .arc()
+        .outerRadius(radius - 40)
+        .innerRadius(radius - 40);
+
       drawPie(
         graph,
         pie,
@@ -138,8 +137,8 @@ const draw = (selectorName, data) => {
         data.LegendWidth,
         data.LegendHeight,
         data.LegendTextSize,
-        data.LegYpost,
-        data.LegXpost
+        data.LegTextYpost,
+        data.LegTextXpost
       );
     default:
       break;
