@@ -12,7 +12,8 @@ const drawBar = (
   heading,
   headingsize,
   headingXC,
-  headingYC
+  headingYC,
+  headingcolor
 ) => {
   const rects = parentGroup.selectAll('rect').data(data);
 
@@ -31,5 +32,6 @@ const drawBar = (
     .text(heading)
     .style('font-size', headingsize)
     .attr('x', headingXC)
-    .attr('y', headingYC);
+    .attr('y', headingYC)
+    .style('fill', headingcolor);
 };
