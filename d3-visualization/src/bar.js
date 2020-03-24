@@ -1,13 +1,17 @@
-const drawBar = (
-  xScale,
-  yScale,
+const drawbarchart = (
   parentGroup,
+  height,
+  xScale3,
+  yScale3,
   data,
-  xScaleAttrName,
-  yScaleAttrName,
-  barMaxHeight,
-  barWidth,
-  fillBarcolor,
+  AttrName,
+  AttrName2,
+  xAxisTicksize,
+  yAxisTicksize,
+  xTextAnchor,
+  xTransform,
+  barDistance,
+  colorbar,
   svg,
   heading,
   headingsize,
@@ -15,16 +19,31 @@ const drawBar = (
   headingYC,
   headingcolor
 ) => {
-  const rects = parentGroup.selectAll('rect').data(data);
+  parentGroup
+    .append('g')
+    .attr('transform', 'translate(0,' + height + ')') //linearscale on bottom as x-axis
+    .call(d3.axisBottom(xScale3))
+    .selectAll('text')
+    .style('font-size', xAxisTicksize);
 
-  rects
+  parentGroup
+    .append('g')
+    .call(d3.axisLeft(yScale3))
+    .selectAll('text')
+    .style('font-size', yAxisTicksize)
+    .attr('text-anchor', xTextAnchor)
+    .attr('transform', xTransform);
+
+  parentGroup
+    .selectAll('bar')
+    .data(data)
     .enter()
     .append('rect')
-    .attr('width', barWidth)
-    .attr('height', d => barMaxHeight - yScale(d[yScaleAttrName]))
-    .attr('fill', fillBarcolor)
-    .attr('x', d => xScale(d[xScaleAttrName]))
-    .attr('y', d => yScale(d[yScaleAttrName]));
+    .attr('fill', colorbar)
+    .attr('x', barDistance)
+    .attr('height', yScale3.bandwidth)
+    .attr('y', d => yScale3(d[AttrName]))
+    .attr('width', d => xScale3(d[AttrName2]));
 
   svg
     .append('g')
