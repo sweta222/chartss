@@ -22,7 +22,7 @@ const draw = (selectorName, data) => {
     .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
   switch (data.type) {
-    case 'bar':
+    case 'column':
       const colors = d3.scaleOrdinal().range(data.barColor);
 
       const yScale = drawLinearAxis(
@@ -139,6 +139,45 @@ const draw = (selectorName, data) => {
         data.LegendTextSize,
         data.LegTextYpost,
         data.LegTextXpost
+      );
+      break;
+    case 'bar':
+      const xScale3 = d3
+        .scaleLinear()
+        .range([0, graphWidth])
+        .domain([0, d3.max(data.datasets, d => d.labely)]);
+
+      const yScale3 = d3
+        .scaleBand()
+        .range([graphHeight, 0])
+        .domain(data.datasets.map(d => d.labelx))
+        .paddingInner(data.innerPadding)
+        .paddingOuter(data.outerPadding);
+
+      const datas = data.datasets.sort((a, b) =>
+        d3.ascending(a.labely - b.labely)
+      );
+      const bars = d3.scaleOrdinal().range(data.barColor);
+      drawbarchart(
+        graph,
+        graphHeight,
+        xScale3,
+        yScale3,
+        datas,
+        'labelx',
+        'labely',
+        data.xTextsize,
+        data.yTextsize,
+        data.xTextAnchor,
+        data.xTransform,
+        data.barDist,
+        (d, i) => bars(i),
+        svg,
+        data.Heading,
+        data.HeadingSize,
+        data.HeadingStyleXval,
+        data.HeadingStyleYval,
+        data.HeadingColor
       );
     default:
       break;
