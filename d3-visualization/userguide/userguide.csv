@@ -7,13 +7,14 @@ left-left margin
 width-width of the space where u want to draw in the canvas
 height-height of the space where u want to draw in the canvas
 barColor-the colors of the bars u want to fill,fill in array format
-yTextsize-the text size of ur data field on y-axis for both bar and line charts
-xTextsize-the text size of ur data field on x-axis for both bar and line charts
-xTransform-rotate the x-axis data text by ur choice for bar,line and pie charts
-xTextAnchor-anchor the postion of ur x-axis data texts by ur choice for bar,line and pie charts
+yTextsize-the text size of ur data field on y-axis for column,line,bar charts
+xTextsize-the text size of ur data field on x-axis for column,line,bar charts
+xTransform-rotate the x-axis data text by ur choice for column,line,pie,bar charts(here on y-axis)
+xTextAnchor-anchor the postion of ur x-axis data texts by ur choice for column,line,pie,bar charts(y-axis)
 innerPadding-padding between bars,applicable to line also for spacing among x-axis texts
 outerPadding-padding between axis and bars,applicable to line also for spacing among x-axis texts
-Heading-ur Heading of the chart data for bar,pie 
+barDist-for spacing of bars from y-axis only in case of bar chart
+Heading-ur Heading of the chart data for bar,pie,column 
 labelx,labely-data on which u want to draw charts
 linestrokecolor-color of ur line u want to draw
 lineArea-fill area coming under the line,if u want
