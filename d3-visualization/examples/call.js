@@ -7,13 +7,59 @@ draw('.barchart', {
   left: 120,
   width: 860,
   height: 500,
-  barColor: ['orange', 'green', 'blue', 'red'],
+  linestrokecolor: 'teal',
+  lineArea: 'yellow',
+  strokeWidth: 2,
+  barColor: ['orange', 'pink', 'green', 'red'],
   yTextsize: '20px',
   xTextsize: '20px',
   xTransform: 'rotate(-7)',
-  xTextAnchor: 'middle',
-  innerPadding: 0.5,
-  outerPadding: 0.5,
+  xTextAnchor: 'end',
+  innerPadding: 0.3,
+  outerPadding: 0.3,
+  Heading: 'Browser statistics',
+  HeadingSize: '30px',
+  HeadingStyleXval: 350,
+  HeadingStyleYval: 20,
+  HeadingColor: 'red',
+  barDist: 1,
+
+  datasets: [
+    {
+      labelx: 'chrome',
+      labely: 73.7
+    },
+    {
+      labelx: 'I/E',
+      labely: 4.9
+    },
+    {
+      labelx: 'firefox',
+      labely: 30.4
+    },
+    {
+      labelx: 'safari',
+      labely: 3.6
+    }
+  ]
+});
+
+draw('.columnchart', {
+  type: 'column',
+
+  top: 20,
+  right: 20,
+  bottom: 60,
+  left: 120,
+  width: 860,
+  height: 500,
+  barColor: ['orange', 'skyblue', 'red', 'green'],
+  yTextsize: '20px',
+  xTextsize: '20px',
+  xTransform: 'rotate(-7)',
+  xTextAnchor: 'end',
+  innerPadding: 0.3,
+  outerPadding: 0.3,
   Heading: 'Browser statistics',
   HeadingSize: '30px',
   HeadingStyleXval: 450,
