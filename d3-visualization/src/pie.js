@@ -1,78 +1,56 @@
-const drawPie = (
-  parentGroup,
-  piee,
-  arcs,
-  colorx,
-  arcLabel,
-  browsers,
-  svg,
-  radius,
-  svgwidth,
-  legendFill,
-  legendText,
-  pieTextanchor,
-  Heading,
-  pieFontsize,
-  HeadingStyle,
-  HeadingStylex,
-  HeadingStyley,
-  HeadingSize,
-  HeadingColor,
-  pieLegWidth,
-  pieLegHeight,
-  legendTextsize,
-  legTextYpost,
-  legTextXpost
-) => {
-  const g = parentGroup
+const drawPie = arg => {
+  const g = arg.parentGroup
     .selectAll('arc')
-    .data(piee)
+    .data(arg.piee)
     .enter()
     .append('g');
 
   g.append('path')
-    .attr('d', arcs)
-    .attr('fill', colorx);
+    .attr('d', arg.arcs)
+    .attr('fill', arg.colorx);
 
   g.append('text')
-    .attr('transform', d => 'translate(' + arcLabel.centroid(d) + ')')
-    .style('font-size', pieFontsize)
-    .text(browsers)
-    .attr('text-anchor', pieTextanchor);
+    .attr('transform', d => 'translate(' + arg.arcLabel.centroid(d) + ')')
+    .style('font-size', arg.pieFontsize)
+    .text(arg.browsers)
+    .attr('text-anchor', arg.pieTextanchor);
 
-  svg
+  arg.svg
     .append('text')
     .attr('transform', 'translate(400, 200)')
-    .text(Heading)
-    .attr('font-family', HeadingStyle)
-    .attr('x', HeadingStylex)
-    .attr('y', HeadingStyley)
-    .attr('font-size', HeadingSize)
-    .attr('fill', HeadingColor);
+    .text(arg.Heading)
+    .attr('font-family', arg.HeadingStyle)
+    .attr('x', arg.HeadingStylex)
+    .attr('y', arg.HeadingStyley)
+    .attr('font-size', arg.HeadingSize)
+    .attr('fill', arg.HeadingColor);
 
-  parentGroup.attr('transform', 'translate(' + radius + ',' + radius + ')');
+  arg.parentGroup.attr(
+    'transform',
+    'translate(' + arg.radius + ',' + arg.radius + ')'
+  );
 
-  const legendGrp = svg
+  const legendGrp = arg.svg
     .selectAll('.legend')
-    .data(piee)
+    .data(arg.piee)
     .enter()
     .append('g')
     .attr(
       'transform',
-      (d, i) => 'translate(' + (svgwidth - 300) + ',' + (i * 30 + 20) + ')'
+      (d, i) => 'translate(' + (arg.svgwidth - 300) + ',' + (i * 30 + 20) + ')'
     )
     .attr('class', 'legend');
 
   legendGrp
     .append('rect')
-    .attr('width', pieLegWidth)
-    .attr('height', pieLegHeight)
-    .attr('fill', legendFill);
+    .attr('width', arg.pieLegWidth)
+    .attr('height', arg.pieLegHeight)
+    .attr('fill', arg.legendFill);
 
   legendGrp
     .append('text')
-    .text(legendText)
-    .style('font-size', legendTextsize)
-    .attr('y', legTextYpost)
-    .attr('x', legTextXpost);
+    .text(arg.legendText)
+    .style('font-size', arg.legendTextsize)
+    .attr('y', arg.legTextYpost)
+    .attr('x', arg.legTextXpost);
 };

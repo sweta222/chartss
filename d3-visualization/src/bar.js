@@ -1,56 +1,36 @@
-const drawbarchart = (
-  parentGroup,
-  height,
-  xScale3,
-  yScale3,
-  data,
-  AttrName,
-  AttrName2,
-  xAxisTicksize,
-  yAxisTicksize,
-  xTextAnchor,
-  xTransform,
-  barDistance,
-  colorbar,
-  svg,
-  heading,
-  headingsize,
-  headingXC,
-  headingYC,
-  headingcolor
-) => {
-  parentGroup
+const drawbarchart = arg => {
+  arg.parentGroup
     .append('g')
-    .attr('transform', 'translate(0,' + height + ')') //linearscale on bottom as x-axis
-    .call(d3.axisBottom(xScale3))
+    .attr('transform', 'translate(0,' + arg.height + ')') //linearscale on bottom as x-axis
+    .call(d3.axisBottom(arg.xScale3))
     .selectAll('text')
-    .style('font-size', xAxisTicksize);
+    .style('font-size', arg.xAxisTicksize);
 
-  parentGroup
+  arg.parentGroup
     .append('g')
-    .call(d3.axisLeft(yScale3))
+    .call(d3.axisLeft(arg.yScale3))
     .selectAll('text')
-    .style('font-size', yAxisTicksize)
-    .attr('text-anchor', xTextAnchor)
-    .attr('transform', xTransform);
+    .style('font-size', arg.yAxisTicksize)
+    .attr('text-anchor', arg.xTextAnchor)
+    .attr('transform', arg.xTransform);
 
-  parentGroup
+  arg.parentGroup
     .selectAll('bar')
-    .data(data)
+    .data(arg.data)
     .enter()
     .append('rect')
-    .attr('fill', colorbar)
-    .attr('x', barDistance)
-    .attr('height', yScale3.bandwidth)
-    .attr('y', d => yScale3(d[AttrName]))
-    .attr('width', d => xScale3(d[AttrName2]));
+    .attr('fill', arg.colorbar)
+    .attr('x', arg.barDistance)
+    .attr('height', arg.yScale3.bandwidth)
+    .attr('y', d => arg.yScale3(d[arg.AttrName]))
+    .attr('width', d => arg.xScale3(d[arg.AttrName2]));
 
-  svg
+  arg.svg
     .append('g')
     .append('text')
-    .text(heading)
-    .style('font-size', headingsize)
-    .attr('x', headingXC)
-    .attr('y', headingYC)
-    .style('fill', headingcolor);
+    .text(arg.heading)
+    .style('font-size', arg.headingsize)
+    .attr('x', arg.headingXC)
+    .attr('y', arg.headingYC)
+    .style('fill', arg.headingcolor);
 };

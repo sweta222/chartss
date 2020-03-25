@@ -1,31 +1,21 @@
-const drawLine = (
-  xScale,
-  yScale,
-  data,
-  xScaleAttrName,
-  yScaleAttrName,
-  parentGroup,
-  strokeColor,
-  fillBeneathline,
-  fillStrokeWidth
-) => {
+const drawLine = arg => {
   const line = d3
     .line()
     .x(function(d) {
-      return xScale(d[xScaleAttrName]);
+      return arg.xScale(d[arg.xScaleAttrName]);
     })
     .y(function(d) {
-      return yScale(d[yScaleAttrName]);
+      return arg.yScale(d[arg.yScaleAttrName]);
     });
 
   //path element
-  const path = parentGroup.append('path');
+  const path = arg.parentGroup.append('path');
 
   path
-    .data([data])
-    .attr('fill', fillBeneathline)
-    .attr('stroke', strokeColor)
-    .attr('stroke-width', fillStrokeWidth)
+    .data([arg.data])
+    .attr('fill', arg.fillBeneathline)
+    .attr('stroke', arg.strokeColor)
+    .attr('stroke-width', arg.fillStrokeWidth)
     .attr('class', 'line')
     .attr('d', line);
 };

@@ -1,37 +1,21 @@
-const drawBar = (
-  xScale,
-  yScale,
-  parentGroup,
-  data,
-  xScaleAttrName,
-  yScaleAttrName,
-  barMaxHeight,
-  barWidth,
-  fillBarcolor,
-  svg,
-  heading,
-  headingsize,
-  headingXC,
-  headingYC,
-  headingcolor
-) => {
-  const rects = parentGroup.selectAll('rect').data(data);
+const drawBar = arg => {
+  const rects = arg.parentGroup.selectAll('rect').data(arg.data);
 
   rects
     .enter()
     .append('rect')
-    .attr('width', barWidth)
-    .attr('height', d => barMaxHeight - yScale(d[yScaleAttrName]))
-    .attr('fill', fillBarcolor)
-    .attr('x', d => xScale(d[xScaleAttrName]))
-    .attr('y', d => yScale(d[yScaleAttrName]));
+    .attr('width', arg.barWidth)
+    .attr('height', d => arg.barMaxHeight - arg.yScale(d[arg.yScaleAttrName]))
+    .attr('fill', arg.fillBarcolor)
+    .attr('x', d => arg.xScale(d[arg.xScaleAttrName]))
+    .attr('y', d => arg.yScale(d[arg.yScaleAttrName]));
 
-  svg
+  arg.svg
     .append('g')
     .append('text')
-    .text(heading)
-    .style('font-size', headingsize)
-    .attr('x', headingXC)
-    .attr('y', headingYC)
-    .style('fill', headingcolor);
+    .text(arg.heading)
+    .style('font-size', arg.headingsize)
+    .attr('x', arg.headingXC)
+    .attr('y', arg.headingYC)
+    .style('fill', arg.headingcolor);
 };
