@@ -1,3 +1,6 @@
+import * as d3 from 'd3';
+import drawLinearAxis from './linearscale';
+import drawBandAxis from './bandscale';
 const drawBar = arg => {
   const fillBarColor = (d, i) => arg.userData.barColor[i];
   const xScale = drawLinearAxis({
@@ -46,3 +49,4 @@ const drawBar = arg => {
     .attr('y', arg.userData.HeadingStyleYval)
     .style('fill', arg.userData.HeadingColor);
 };
+export default drawBar;

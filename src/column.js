@@ -1,3 +1,6 @@
+import * as d3 from 'd3';
+import drawBandAxis from './bandscale';
+import drawLinearAxis from './linearscale';
 const drawColumn = arg => {
   //const colors = d3.scaleOrdinal().range(arg.userData.barColor);
 
@@ -49,3 +52,4 @@ const drawColumn = arg => {
     .attr('y', arg.userData.HeadingStyleYval)
     .style('fill', arg.userData.HeadingColor);
 };
+export default drawColumn;

@@ -1,3 +1,9 @@
+import * as d3 from 'd3';
+import drawBar from './bar';
+import drawLine from './line';
+import drawColumn from './column';
+import drawPie from './pie';
+
 const draw = (selectorName, data) => {
   const margin = {
     top: data.top,
@@ -62,7 +68,9 @@ const draw = (selectorName, data) => {
         AttrName2: 'labely',
         svg: svg
       });
+      break;
     default:
       break;
   }
 };
+export default draw;

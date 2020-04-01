@@ -1,3 +1,6 @@
+import * as d3 from 'd3';
+import drawBandAxis from './bandscale';
+import drawLinearAxis from './linearscale';
 const drawLine = arg => {
   const xScale = drawBandAxis({
     domainArr: arg.userData.datasets.map(d => d.labelx),
@@ -44,3 +47,4 @@ const drawLine = arg => {
     .attr('class', 'line')
     .attr('d', line);
 };
+export default drawLine;

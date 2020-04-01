@@ -1,3 +1,4 @@
+import * as d3 from 'd3';
 const drawLinearAxis = arg => {
   const scale = d3
     .scaleLinear()
@@ -24,3 +25,4 @@ const drawLinearAxis = arg => {
 
   return scale;
 };
+export default drawLinearAxis;

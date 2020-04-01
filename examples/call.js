@@ -137,7 +137,7 @@ draw('.piechart', {
   xTextAnchor: 'middle',
   piecolors: ['#4daf4a', '#377eb8', '#ff7f00', '#984ea3'],
   innerRadius: 0,
-  Heading: 'Browser statistics',
+  Heading: 'Browsers statistics',
   pieFontsize: '20px',
   HeadingStyle: 'sans-serif',
   HeadingStyleXval: 150,

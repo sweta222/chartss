@@ -1,3 +1,4 @@
+import * as d3 from 'd3';
 const drawPie = arg => {
   const piee = d3.pie()(arg.userData.datasets.map(d => d.labely));
   const colorx = (d, i) => arg.userData.piecolors[i];
@@ -90,3 +91,4 @@ const drawPie = arg => {
     .attr('y', arg.userData.LegTextYpost)
     .attr('x', arg.userData.LegTextXpost);
 };
+export default drawPie;

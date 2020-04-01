@@ -1,3 +1,4 @@
+import * as d3 from 'd3';
 const drawBandAxis = arg => {
   const scale = d3
     .scaleBand()
@@ -29,3 +30,4 @@ const drawBandAxis = arg => {
 
   return scale;
 };
+export default drawBandAxis;

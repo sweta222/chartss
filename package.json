@@ -1,0 +1,31 @@
+{
+  "name": "learn-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "d3": "^5.15.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "rollup": "^2.3.1",
+    "rollup-plugin-eslint": "^7.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sweta222/learn-javascript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sweta222/learn-javascript/issues"
+  },
+  "homepage": "https://github.com/sweta222/learn-javascript#readme"
+}
