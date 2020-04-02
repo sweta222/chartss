@@ -10,7 +10,7 @@ myBundle('.barchart', {
   linestrokecolor: 'teal',
   lineArea: 'yellow',
   strokeWidth: 2,
-  barColor: ['orange', 'pink', 'green', 'red'],
+  barColor: ['orange', 'pink', 'green', 'yellow'],
   yTextsize: '20px',
   xTextsize: '20px',
   xTransform: 'rotate(-7)',
