@@ -1,4 +1,4 @@
-draw('.barchart', {
+myBundle('.barchart', {
   type: 'bar',
 
   top: 20,
@@ -44,7 +44,7 @@ draw('.barchart', {
   ]
 });
 
-draw('.columnchart', {
+myBundle('.columnchart', {
   type: 'column',
 
   top: 20,
@@ -53,7 +53,7 @@ draw('.columnchart', {
   left: 120,
   width: 860,
   height: 500,
-  barColor: d3.schemeDark2,
+  barColor: ['orange', 'pink', 'green', 'red'],
   yTextsize: '20px',
   xTextsize: '20px',
   xTransform: 'rotate(-7)',
@@ -86,7 +86,7 @@ draw('.columnchart', {
   ]
 });
 
-draw('.linechart', {
+myBundle('.linechart', {
   type: 'line',
 
   top: 20,
@@ -125,7 +125,7 @@ draw('.linechart', {
   ]
 });
 
-draw('.piechart', {
+myBundle('.piechart', {
   type: 'pie',
 
   top: 20,
