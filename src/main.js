@@ -9,7 +9,7 @@ const draw = (selectorName, data) => {
     top: data.top,
     right: data.right,
     bottom: data.bottom,
-    left: data.left
+    left: data.left,
   };
   const graphWidth = data.width - margin.left - margin.right;
   const graphHeight = data.height - margin.top - margin.bottom;
@@ -36,7 +36,7 @@ const draw = (selectorName, data) => {
         width: graphWidth,
         xScaleAttrName: 'labelx',
         yScaleAttrName: 'labely',
-        svg: svg
+        svg: svg,
       });
       break;
     case 'line':
@@ -46,7 +46,7 @@ const draw = (selectorName, data) => {
         height: graphHeight,
         width: graphWidth,
         xScaleAttrName: 'labelx',
-        yScaleAttrName: 'labely'
+        yScaleAttrName: 'labely',
       });
       break;
     case 'pie':
@@ -55,7 +55,7 @@ const draw = (selectorName, data) => {
         parentGroup: graph,
         width: graphWidth,
         height: graphHeight,
-        svg: svg
+        svg: svg,
       });
       break;
     case 'bar':
@@ -66,7 +66,7 @@ const draw = (selectorName, data) => {
         height: graphHeight,
         AttrName: 'labelx',
         AttrName2: 'labely',
-        svg: svg
+        svg: svg,
       });
       break;
     default:
