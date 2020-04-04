@@ -8,12 +8,12 @@ export default {
   output: [
     {
       name: 'myBundle',
-      file: `${build}/charts.js`,
+      file: `${build}/chartss.js`,
       format: 'umd',
     },
     {
       name: 'bundleMin',
-      file: `${build}/charts.min.js`,
+      file: `${build}/chartss.min.js`,
       format: 'umd',
       plugins: [terser()],
     },
