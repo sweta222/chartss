@@ -1,4 +1,4 @@
-myBundle('.barchart', {
+bundleMin('.barchart', {
   type: 'bar',
 
   top: 20,
@@ -27,24 +27,24 @@ myBundle('.barchart', {
   datasets: [
     {
       labelx: 'chrome',
-      labely: 73.7
+      labely: 73.7,
     },
     {
       labelx: 'I/E',
-      labely: 4.9
+      labely: 4.9,
     },
     {
       labelx: 'firefox',
-      labely: 30.4
+      labely: 30.4,
     },
     {
       labelx: 'safari',
-      labely: 3.6
-    }
-  ]
+      labely: 3.6,
+    },
+  ],
 });
 
-myBundle('.columnchart', {
+bundleMin('.columnchart', {
   type: 'column',
 
   top: 20,
@@ -69,24 +69,24 @@ myBundle('.columnchart', {
   datasets: [
     {
       labelx: 'chrome',
-      labely: 73.7
+      labely: 73.7,
     },
     {
       labelx: 'I/E',
-      labely: 4.9
+      labely: 4.9,
     },
     {
       labelx: 'firefox',
-      labely: 30.4
+      labely: 30.4,
     },
     {
       labelx: 'safari',
-      labely: 3.6
-    }
-  ]
+      labely: 3.6,
+    },
+  ],
 });
 
-myBundle('.linechart', {
+bundleMin('.linechart', {
   type: 'line',
 
   top: 20,
@@ -108,24 +108,24 @@ myBundle('.linechart', {
   datasets: [
     {
       labelx: 'chrome',
-      labely: 73.7
+      labely: 73.7,
     },
     {
       labelx: 'I/E',
-      labely: 4.9
+      labely: 4.9,
     },
     {
       labelx: 'firefox',
-      labely: 30.4
+      labely: 30.4,
     },
     {
       labelx: 'safari',
-      labely: 3.6
-    }
-  ]
+      labely: 3.6,
+    },
+  ],
 });
 
-myBundle('.piechart', {
+bundleMin('.piechart', {
   type: 'pie',
 
   top: 20,
@@ -153,19 +153,19 @@ myBundle('.piechart', {
   datasets: [
     {
       labelx: 'chrome',
-      labely: 73.7
+      labely: 73.7,
     },
     {
       labelx: 'I/E',
-      labely: 4.9
+      labely: 4.9,
     },
     {
       labelx: 'firefox',
-      labely: 30.4
+      labely: 30.4,
     },
     {
       labelx: 'safari',
-      labely: 3.6
-    }
-  ]
+      labely: 3.6,
+    },
+  ],
 });
